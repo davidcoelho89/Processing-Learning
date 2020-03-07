@@ -1,2 +1,2 @@
 # Processing-Learning
-Libraries, Samples and Theory of Processing
+Samples and Theory of Processing
