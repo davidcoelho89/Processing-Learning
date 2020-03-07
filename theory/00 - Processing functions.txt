@@ -1,0 +1,348 @@
+------------ Comments
+
+// this is a single line
+
+/* this is
+a multiline */
+
+------------ Vocabulary
+
+- CANVAS: 	tela gerada ao rodar a aplicação (eixos X e Y)
+		Coordenadas começam do canto esquerdo superior
+- SKETCH: 	cada sequência de código gerado 
+		(semelhante aos arquivos “.c” e “.h”)
+- PIXEL: 	pontos na tela do computador / canvas
+
+------------ Structure
+
+// Each Processing sketch must contain the following two functions.
+
+void setup()
+{
+  //this code runs once at the beginning of the code execution.
+}
+void draw()
+{
+  //The draw loop is the portion of code that keeps repeating while the Processing canvas is open.
+}
+
+------------ Initial
+
+// Colors
+
+// colorMode defines de range and type of color
+// Default range: 0 (black: without color) - 255 (white: full color)
+// Default: colorMode(RGB,255,255,255,255);
+// Mode: RGB (Red/Green/Blue) ou HSB (Hue/Saturation/Brightness)
+
+colorMode(mode,max1,max2,max3,maxA);
+color(gray,alpha);
+color(R,G,B,alpha);
+
+// alliased or anti-alliased design
+
+smooth(); 
+noSmooth(); 
+
+// Size of screen
+
+size(wid,heig);		// sets canvas size
+background(color);	// sets canvas background color
+height;			// cte that have screen height
+width;			// cte that have screen width
+
+// Print debug message to console
+
+print(string);		// print without CRLF
+println(string);	// print with CRLF ('\n')
+
+// App's draw update
+
+frameRate(fps) 		// update fps from draw
+frameCount;		// cte that have current frame of app
+frameRate;		// cte that have current fps
+
+// Loop functions
+
+noLoop(); 		// set draw to only execute once
+loop();   		// set draw to execute continously (put on an event)
+redraw(); 		// set draw to execute one more time (put on an event)
+
+exit();			// close canvas
+
+------------ Time and Date
+
+int val = year();	// returns current year
+int val = month();	// returns current month
+int val = day();	// returns current day
+int val = hour();	// returns current hour
+int val = minute();	// returns current minute
+int val = second();	// returns current second
+
+// number of milliseconds since the sketch started
+millis();
+
+// Wait given time in ms
+delay(milliseconds);
+
+// Auxiliary function when delay() is not working
+void delay2()
+{
+  int time = millis();
+  while(millis() - time <= delay);
+}
+
+------------ Processing Shapes
+
+// Fill of Shapes
+
+fill(color);		// inside color of a shape
+noFill();		// shape without fill
+
+// Border of shapes
+
+stroke(color);		// border color of a shape
+noStroke();		// shape without border
+strokeWeight(w);	// width in pxls of the border (default: 1)
+strokeJoin(j);		// j:  MITER, BEVEL, ROUND (default: MITER)
+strokeCap(cap);		// cap: SQUARE, PROJECT, or ROUND (default: ROUND)
+
+// General 2d Shapes
+
+point(x,y); or point(x,y,z);
+line(x1,y1,x2,y2);
+rect(x,y,w,h,rad); // rad = radius of borders
+triangle(x1,y1,x2,y2,x3,y3);
+quad(x1, y1, x2, y2, x3, y3, x4, y4)
+ellipse(x,y,w,h); // can be a circle if w = h
+arc(x, y, w, h, start, stop, mode); // mode = OPEN / CHORD / PIE
+
+// General 3d Shapes
+
+box(size);  
+box(w,h,d);
+sphere(r);
+
+------------ Pshape
+
+// When you need to construct a shape different from the general shapes
+
+------------ Matrix and Shape Manipulation
+
+// Block of code that can be manipulated togheter
+
+pushMatrix();	// initialize matrix
+popMatrix();	// finish matrix
+
+// Manipulate a Shape inside a matrix
+
+translate(x,y);		// move the shape from its original position (2d)
+translate(x,y,z);	// move the shape from its original position (3d)
+scale(N);		// multiplies the shape's size 'N' times
+rotate(N);		// rotates a matrix by 'N' radians
+
+------------ Images
+
+PImage img;				// image handler
+img = loadImage("img_file.jpg");	// get image from file
+image(img,x,y,w,h);			// display image at pos / size
+
+tint(color);		// fill value for displaying images
+noTint();		// images with default color
+
+imageMode(mode);	// mode: - int: either CORNER, CORNERS, or CENTER
+
+filter(k); // THRESHOLD, GRAY, OPAQUE, INVERT, POSTERIZE, BLUR, ERODE, or DILATE
+
+------------ String manipulation
+
+// String Declaration
+
+char[] text1 = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'};
+String text2 = "Hello World";
+int x = 10;
+String text3 = "The value of x is: " + x;
+String alphabet = "ABcdefghi";
+String alphabet2 = new String(alphabet);
+
+// String functions
+
+alphabet.length();
+alphabet.indexOf("def");
+alphabet.substring(4,7);
+alphabet.charAt(3);
+alphabet.toUpperCase();
+alphabet.toLowerCase(); 
+alphabet2.equals(alphabet);
+
+// Split and Join Strings
+
+String[] strings_list1 = split(phrase_string1, " ");
+String[] strings_list2 = splitTokens(phrase_string2, " &,+.");
+int[] numbers_list = int(split(numbers_string, ',')); 
+
+String onelongstring = join(array_of_strings," ");
+
+------------ Text Manipulation at canvas
+
+printArray(PFont.list());	       // see all available fonts from API
+font1 = createFont("Arial",16,true);   // create a font from an existing one of API
+font2 = loadFont("AngsanaNew-48.vlw"); // load font from "data folder"
+
+textFont(font1);  // define font
+textSize(36);     // define size
+textAlign(LEFT);  // alignment
+fill(255);        // define color
+
+text(string1,0,30,150,150);  // text(string,x,y,wid,hei);
+
+------------ Save data to file
+
+// Variable
+
+PrintWriter output;			// Handler to Write at a file
+
+
+// File Settings
+  
+
+String filename = "pos.csv";
+		// Name of file to be written 
+output = createWriter(filename);
+	// Feed the handler 
+output.println("sep=,");		// Needed at a .csv file to indicate how the data will be separeted
+					// to a .txt file, dont need this
+// Send data
+
+output.println(A + "," + B + "," + C);	// Write data A,B,C to file
+
+// Stop sending data
+
+output.flush();  	// Writes the remaining data to the file
+  
+output.close();  	// Finishes the file
+
+------------ Import data from file
+
+
+
+------------ Save and load video
+
+// Export current frame to file (used in draw function)
+String filename = "output-" + number + ".png";
+saveFrame(filename);
+
+------------ Mouse Interface / Events
+
+mouseX;	mouseY;		// current position of mouse
+pmouseX; pmouseY; 	// last position of mouse
+
+mousePressed;		// check if the mouse is pressed
+mouseButton;		// check wich mouse button was pressed / clicked
+			// can be LEFT, RIGHT, or CENTER
+
+mousePressed();		// called everytime the mouse is pressed
+mouseClicked();		// called everytime the mouse is clicked
+mouseMoved();		// called everytime the mouse moves and there is no mouse button pressed
+mouseDragged();		// called everytime the mouse moves while a mouse button is pressed
+mouseReleased();	// called everytime a mouse button is released.
+mouseWheel();		// returns the number of rolls of mouse's center whell
+			// can be positive or negative
+
+void mouseWheel(MouseEvent event) 
+{
+  float e = event.getCount();
+  println(e);
+}
+
+------------ Keyboard Interface / Events
+
+key;			// cte that have the last key pressed value
+key == CODED;		// indicates that a key dont have ASCII code
+keyCode;		// cte taht have the last keycode of key pressed
+keyPressed;		// cte that indicates that a key is pressed
+void keyPressed();	// called when a key is pressed at keyboard
+void keyReleased();	// called when a key is released at keyboard
+
+------------ Serial Functions
+
+Serial.list();   	        // String list of all available serial ports
+PortName = Serial.list()[0];    // get the first serialName from serialList
+
+Serial myPort;		        // variable that handles serial
+myPort = new Serial(this,Portname,9600,'N',8,1); // serial handler constructor
+
+myPort.stop();			// Stops data communication on this port
+myPort.clear();			// Empty the buffer of this port
+
+myPort.available();	        // returns the number of available bytes at buffer
+
+myPort.buffer(number);		// set the number of bytes received to call serialEvent
+myPort.bufferUntil('\n');       // just go to serialEvent when a '\n' is received
+
+myPort.write(src);	        // writes bytes, chars, ints, bytes[], Strings through serial port
+
+myPort.last();			// returns last byte received
+myPort.lastChar();		// returns last char received
+
+myPort.read();		        // returns the first byte at buffer (int from 0 to 255)
+myPort.readChar();	        // returns the first byte at buffer as a char
+
+inBuffer = myPort.readBytes();  	// returns the bytes at inBuffer
+inBuffer = myPort.readBytesUntil('\n'); // returns the bytes at inBuffer
+
+myPort.readBytes(inBuffer);     	// returns the bytes at inBuffer
+myPort.readBytesUntil('\n', inBuffer);  // returns the bytes at inBuffer
+
+String SerialString = myPort.readString();   // group bytes at a single string
+SerialString = myPort.readStringUntil('\n'); // group bytes till a '\n' at a single string
+
+void serialEvent(Serial myPort) // called everytime a byte or a sequenc of bytes is received
+{
+
+}
+
+------------ Function/Method as a parameter of function/method
+
+- Same in java as "reflection"
+- Call a function by its name
+https://forum.processing.org/two/discussion/570/how-to-pass-a-function-method-as-a-parameter-to-another-function-method-callback-function
+
+method("method_name"); // calls a method by its name and runs inside draw or setup
+thread("method_name"); // calls a method by its name and runs at the same time as draw or setup
+
+------------ Control Structures
+
+if(condition)
+{
+  // if condition is TRUE, do something here
+}
+else
+{
+  // otherwise, do this
+}
+
+for(initialization; condition; increment)
+{
+  // do this
+}
+
+for(int x = 0; x < 100; x++)
+{
+  println(x);
+}
+
+------------ General Sintax
+
+// Data Types
+
+void 		(null return)
+int 	x	(integer -32,768 to 32,767)
+float 	y	(floating point / decimal numbers)
+double	z	(double floating point)
+char	c	(character)
+String 	test	(array of characters)
+float[] numbers	(array of float numbers)
+int[][] test	(matrix of int numbers)
+
+------------ End

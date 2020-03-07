@@ -1,0 +1,81 @@
+PROCESSING - Falta
+
+GUI
+
+Video Load
+Video export
+
+Mouse
+
+Data Import / Export
+
+https://processing.org/tutorials/data/
+https://processing.org/reference/BufferedReader.html
+https://processing.org/reference/saveStrings_.html
+https://processing.org/reference/loadStrings_.html
+https://processing.org/reference/saveBytes_.html
+https://processing.org/reference/loadBytes_.html
+
+
+PROCESSING - REFERENCIAS GERAIS
+
+https://www.processing.org/overview/
+https://www.processing.org/tutorials/	
+https://www.processing.org/reference/
+https://www.processing.org/reference/libraries/
+https://www.processing.org/examples/
+
+http://www.openprocessing.org/
+
+PROCESSING - EXPORTAR APLICAÇÃO
+
+http://processing.org/reference/environment/#Export
+
+PROCESSING - ORIENTAÇÃO A OBJETOS
+
+https://processing.org/examples/arrayobjects.html
+https://processing.org/reference/ArrayList.html
+https://processing.org/examples/inheritance.html
+https://processing.org/tutorials/arrays/
+https://processing.org/discourse/beta/num_1229617720.html
+https://processing.org/reference/implements.html
+https://forum.processing.org/two/discussion/761/interface-inheritance
+
+PROCESSING - COMPILANDO DO ECLIPSE
+
+https://processing.org/tutorials/eclipse/
+https://processing.googlecode.com/svn/trunk/processing/build/javadoc/core/processing/core/PApplet.html
+
+PROCESSING - INTERFACE GRÁFICA
+
+http://labdegaragem.com/profiles/blogs/tutorial-como-criar-sua-propria-interface-grafica-para-seus-proje
+https://www.youtube.com/user/dspic33/videos?sort=dd&shelf_id=1&view=0
+
+PROCESSING - ARDUINO FORUM
+
+https://forum.processing.org/two/categories/arduino
+
+PROCESSING - OUTROS
+
+- Processing - Timer: timer_on / timer_period_ms / timer_init
+- Processing - Classe progress bar - timer events
+- Processing - Classe scroll bar - click events
+- Processing - Logica do foco (só focar se tiver algum handle)
+- Processing - Adicionar animações e fazer videos
+	http://navax.net.br/blog/?cat=19
+	http://navax.net.br/blog/?cat=20
+
+http://www.filipeflop.com/pd-2c0efe-livro-raspberry-pi-manual-do-usuario.html
+http://www.filipeflop.com/pd-2c0eba-livro-arduino-em-acao.html
+http://www.filipeflop.com/pd-2c0ec9-livro-arduino-basico-2-edicao.html
+
+http://www.filipeflop.com/pd-6b7ed-display-led-matricial-8x8-bicolor.html
+http://www.filipeflop.com/pd-29265e-assistente-de-soldagem-hikari-hk-151.html
+http://www.filipeflop.com/pd-30412e-modulo-mosfet-irf520n.html
+
+http://labdegaragem.com/forum/topics/acelerometro-mma7361-servo-motor-socorro
+http://labdegaragem.com/forum/topics/acelerometro-mma7361l-servo-motor
+
+http://www.alexandreaugusto.com.br/sensor-pressao-barometro-arduino-bmp180-substitui-bmp085
+https://pt.wikipedia.org/wiki/Norbert_Wiener
+http://digital.ni.com/public.nsf/allkb/CA53ABE9845FFFA986257A250050A6E0
